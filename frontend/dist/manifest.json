@@ -1,0 +1,8 @@
+{
+  "short_name": "AI Interview Pro",
+  "name": "AI-Powered Interview Preparation Platform",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#6366F1",
+  "background_color": "#06080F"
+}

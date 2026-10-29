@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#06080F] text-slate-100 selection:bg-indigo-500 selection:text-white;
+  }
+}
+
+/* Custom Cyber Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(13, 19, 33, 0.72);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-panel-hover {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(26, 35, 58, 0.85);
+  border-color: rgba(99, 102, 241, 0.45);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(99, 102, 241, 0.3);
+}
+
+.glass-input {
+  background: rgba(11, 17, 32, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+}
+
+.glass-input:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+  outline: none;
+}
+
+/* Glowing Neon Text & Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #60A5FA 0%, #A78BFA 45%, #F472B6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 60%, #8B5CF6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-amber {
+  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glow-border {
+  position: relative;
+}
+
+.glow-border::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(90deg, #6366F1, #EC4899, #06B6D4);
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0.4;
+  filter: blur(10px);
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::after {
+  opacity: 0.85;
+}
+
+/* Sound Wave and Frequency Animation */
+@keyframes soundWave {
+  0%, 100% {
+    height: 6px;
+  }
+  50% {
+    height: 38px;
+  }
+}
+
+.sound-bar {
+  animation: soundWave 1.2s ease-in-out infinite alternate;
+}
+
+/* Pulsing Avatar Halo */
+@keyframes soundRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+}
+
+.sound-ring {
+  animation: soundRing 2.4s ease-in-out infinite;
+}
+
+/* Circular Progress Dial Animation */
+.progress-ring-circle {
+  transition: stroke-dashoffset 1s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080C14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366F1;
+}
+
+/* Print Stylesheet for Placement Readiness Report */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .glass-panel {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    color: black !important;
+  }
+  .text-white {
+    color: #111827 !important;
+  }
+  .text-slate-300, .text-slate-400 {
+    color: #4B5563 !important;
+  }
+}
+
